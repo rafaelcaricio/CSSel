@@ -1,0 +1,95 @@
+@keyframes restart-next {
+    0% {
+        margin-left: -1878px; /* =-2*box.width */
+    }
+    100% {
+        margin-left: -2817px; /* =-3*box.width */
+    }
+}
+@keyframes restart-back {
+    0% {
+        margin-left: -939px; /* =-1*box.width */
+    }
+    100% {
+        margin-left: 0;
+    }
+}
+.carrossel input { /* hide all internal controls */
+    display: none;
+}
+.viewport {
+    position: relative;
+    width: 939px; /* =box.width */
+    height: 320px; /* =box.height */
+    *overflow: hidden;
+}
+.move-next, .move-back {
+    /* 7 boxes in HTML so this width should accommodate them */
+    width: 6573px; /* =7*box.width */
+}
+.move-back {
+    /* initial state set to middle */
+    margin-left: -2817px; /* =-3*box.width */
+}
+.box {
+    float: left;
+    width: 939px; /* =box.width */
+    height: 320px; /* =box.height */
+}
+.carrossel label.next1, .carrossel label.back1 {
+    display: none;
+}
+.carrossel label.next2, .carrossel label.back2 {
+    display: none;
+}
+
+/* move the carrossel left and right */
+
+#back-action:checked ~ .viewport .move-back {
+    transition: margin-left 1s;
+    margin-left: -400px; /* =-2*box.width */
+}
+#back1-action:checked ~ .viewport .move-back {
+    transition: margin-left 1s;
+    margin-left: -200px; /* =-1*box.width */
+}
+#back2-action:checked ~ .viewport .move-back {
+    animation: restart-back 1s ease;
+}
+
+#next-action:checked ~ .viewport .move-next {
+    transition: margin-left 1s;
+    margin-left: -200px; /* =-1*box.width */
+}
+#next1-action:checked ~ .viewport .move-next {
+    transition: margin-left 1s;
+    margin-left: -400px; /* =-2*box.width */
+}
+#next2-action:checked ~ .viewport .move-next {
+    animation: restart-next 1s ease;
+}
+
+/* hide the flow of controls */
+
+#next-action:checked ~ .next,
+#back-action:checked ~ .back {
+    display: none;
+}
+#next-action:checked ~ .next1,
+#back-action:checked ~ .back1 {
+    display: inline;
+}
+
+#next1-action:checked ~ .next,
+#back1-action:checked ~ .back {
+    display: none;
+}
+#next1-action:checked ~ .next2,
+#back1-action:checked ~ .back2 {
+    display: inline;
+}
+
+#next2-action:checked ~ .next,
+#back2-action:checked ~ .back {
+    display: inline;
+}
