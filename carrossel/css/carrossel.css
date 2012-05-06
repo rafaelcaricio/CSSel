@@ -6,6 +6,22 @@
         margin-left: -2817px; /* =-3*box.width */
     }
 }
+@-webkit-keyframes restart-next {
+    0% {
+        margin-left: -1878px; /* =-2*box.width */
+    }
+    100% {
+        margin-left: -2817px; /* =-3*box.width */
+    }
+}
+@-webkit-keyframes restart-back {
+    0% {
+        margin-left: -939px; /* =-1*box.width */
+    }
+    100% {
+        margin-left: 0;
+    }
+}
 @keyframes restart-back {
     0% {
         margin-left: -939px; /* =-1*box.width */
@@ -21,7 +37,7 @@
     position: relative;
     width: 939px; /* =box.width */
     height: 320px; /* =box.height */
-    *overflow: hidden;
+    overflow: hidden;
 }
 .move-next, .move-back {
     /* 7 boxes in HTML so this width should accommodate them */
@@ -46,27 +62,33 @@
 /* move the carrossel left and right */
 
 #back-action:checked ~ .viewport .move-back {
-    transition: margin-left 1s;
-    margin-left: -400px; /* =-2*box.width */
+    -webkit-transition: margin-left 300ms ease-in;
+    transition: margin-left 300ms ease-in;
+    margin-left: -1878px; /* =-2*box.width */
 }
 #back1-action:checked ~ .viewport .move-back {
-    transition: margin-left 1s;
-    margin-left: -200px; /* =-1*box.width */
+    -webkit-transition: margin-left 300ms ease-in;
+    transition: margin-left 300ms ease-in;
+    margin-left: -939px; /* =-1*box.width */
 }
 #back2-action:checked ~ .viewport .move-back {
-    animation: restart-back 1s ease;
+    -webkit-animation: restart-back 300ms ease-in;
+    animation: restart-back 300ms ease;
 }
 
 #next-action:checked ~ .viewport .move-next {
-    transition: margin-left 1s;
-    margin-left: -200px; /* =-1*box.width */
+    -webkit-transition: margin-left 300ms ease-in;
+    transition: margin-left 300ms ease-in;
+    margin-left: -939px; /* =-1*box.width */
 }
 #next1-action:checked ~ .viewport .move-next {
-    transition: margin-left 1s;
-    margin-left: -400px; /* =-2*box.width */
+    -webkit-transition: margin-left 300ms ease-in;
+    transition: margin-left 300ms ease-in;
+    margin-left: -1878px; /* =-2*box.width */
 }
 #next2-action:checked ~ .viewport .move-next {
-    animation: restart-next 1s ease;
+    -webkit-animation: restart-next 300ms ease-in;
+    animation: restart-next 300ms ease-in;
 }
 
 /* hide the flow of controls */

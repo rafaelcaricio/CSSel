@@ -1,8 +1,14 @@
 @import url(http://fonts.googleapis.com/css?family=Trochut);
+body {
+    text-align: center;
+    padding-top: 50px;
+}
 .carrossel {
+    display: inline-block;
     position: relative;
     width: 939px;
     height: 320px;
+    text-align: left;
 }
 .carrossel ul { 
     list-style: none;
@@ -32,11 +38,11 @@
 }
 .carrossel .page hgroup {
     position: absolute;
-    top: 195px;
+    top: 175px;
     font-family: helvetica;
     padding: 0 15px;
     color: white;
-    height: 125px;
+    height: 145px;
     -webkit-text-shadow: 1px 1px rgba(0, 0, 0, 0.4);
     text-shadow: 1px 1px rgba(0, 0, 0, 0.4);
     background-image: -webkit-linear-gradient(top, transparent, black);
