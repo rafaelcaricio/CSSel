@@ -1,4 +1,20 @@
-@keyframes restart-next {
+@-o-keyframes restart-next {
+    0% {
+        margin-left: -1878px; /* =-2*box.width */
+    }
+    100% {
+        margin-left: -2817px; /* =-3*box.width */
+    }
+}
+@-ms-keyframes restart-next {
+    0% {
+        margin-left: -1878px; /* =-2*box.width */
+    }
+    100% {
+        margin-left: -2817px; /* =-3*box.width */
+    }
+}
+@-moz-keyframes restart-next {
     0% {
         margin-left: -1878px; /* =-2*box.width */
     }
@@ -12,6 +28,38 @@
     }
     100% {
         margin-left: -2817px; /* =-3*box.width */
+    }
+}
+@keyframes restart-next {
+    0% {
+        margin-left: -1878px; /* =-2*box.width */
+    }
+    100% {
+        margin-left: -2817px; /* =-3*box.width */
+    }
+}
+@-o-keyframes restart-back {
+    0% {
+        margin-left: -939px; /* =-1*box.width */
+    }
+    100% {
+        margin-left: 0;
+    }
+}
+@-ms-keyframes restart-back {
+    0% {
+        margin-left: -939px; /* =-1*box.width */
+    }
+    100% {
+        margin-left: 0;
+    }
+}
+@-moz-keyframes restart-back {
+    0% {
+        margin-left: -939px; /* =-1*box.width */
+    }
+    100% {
+        margin-left: 0;
     }
 }
 @-webkit-keyframes restart-back {
@@ -62,31 +110,49 @@
 /* move the carrossel left and right */
 
 #back-action:checked ~ .viewport .move-back {
+    -o-transition: margin-left 300ms ease-in;
+    -ms-transition: margin-left 300ms ease-in;
+    -moz-transition: margin-left 300ms ease-in;
     -webkit-transition: margin-left 300ms ease-in;
     transition: margin-left 300ms ease-in;
     margin-left: -1878px; /* =-2*box.width */
 }
 #back1-action:checked ~ .viewport .move-back {
+    -o-transition: margin-left 300ms ease-in;
+    -ms-transition: margin-left 300ms ease-in;
+    -moz-transition: margin-left 300ms ease-in;
     -webkit-transition: margin-left 300ms ease-in;
     transition: margin-left 300ms ease-in;
     margin-left: -939px; /* =-1*box.width */
 }
 #back2-action:checked ~ .viewport .move-back {
+    -o-animation: restart-back 300ms ease-in;
+    -ms-animation: restart-back 300ms ease-in;
+    -moz-animation: restart-back 300ms ease-in;
     -webkit-animation: restart-back 300ms ease-in;
     animation: restart-back 300ms ease;
 }
 
 #next-action:checked ~ .viewport .move-next {
+    -o-transition: margin-left 300ms ease-in;
+    -ms-transition: margin-left 300ms ease-in;
+    -moz-transition: margin-left 300ms ease-in;
     -webkit-transition: margin-left 300ms ease-in;
     transition: margin-left 300ms ease-in;
     margin-left: -939px; /* =-1*box.width */
 }
 #next1-action:checked ~ .viewport .move-next {
+    -o-transition: margin-left 300ms ease-in;
+    -ms-transition: margin-left 300ms ease-in;
+    -moz-transition: margin-left 300ms ease-in;
     -webkit-transition: margin-left 300ms ease-in;
     transition: margin-left 300ms ease-in;
     margin-left: -1878px; /* =-2*box.width */
 }
 #next2-action:checked ~ .viewport .move-next {
+    -o-animation: restart-next 300ms ease-in;
+    -ms-animation: restart-next 300ms ease-in;
+    -moz-animation: restart-next 300ms ease-in;
     -webkit-animation: restart-next 300ms ease-in;
     animation: restart-next 300ms ease-in;
 }
